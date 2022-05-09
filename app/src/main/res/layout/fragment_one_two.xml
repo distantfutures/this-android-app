@@ -4,36 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".FragmentOneTwo">
 
-    <Button
-        android:id="@+id/fragment_one_button"
+    <TextView
+        android:id="@+id/act_one_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fragment_1"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_two_button"
+        android:text="@string/activity_1_data"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/fragment_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/fragment_data_one"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_two_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/fragment_two_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fragment_2"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_one_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <EditText
-        android:id="@+id/activity_one_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Fragment 2"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_two_button" />
+        tools:layout_editor_absoluteY="292dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
