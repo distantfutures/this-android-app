@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_first_fragment_to_second_fragment"
             app:destination="@id/second_fragment" />
+        <argument
+            android:name="string_one_data"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/second_fragment"
@@ -22,6 +25,8 @@
         <action
             android:id="@+id/action_second_fragment_to_first_fragment"
             app:destination="@id/first_fragment" />
+        <argument android:name="string_two_data"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/main_fragment"

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.this_android_app.R
 import com.example.this_android_app.databinding.FragmentMainBinding
@@ -32,12 +33,17 @@ class MainFragment : Fragment() {
         binding.mainViewModel = viewModel
 
         viewModel.navigateToFrag.observe(viewLifecycleOwner) {
-            val navController = binding.root.findNavController()
+            val input = binding.mainFragInput.text.toString()
+//            val navController = binding.root.findNavController()
             if(it == 1) {
-                navController.navigate(R.id.action_mainFragment_to_first_fragment)
+                val action = MainFragmentDirections.actionMainFragmentToFirstFragment(input)
+                Navigation.findNavController(binding.root).navigate(action)
+//                navController.navigate(R.id.action_mainFragment_to_first_fragment)
             }
             if(it == 2) {
-                navController.navigate(R.id.action_main_fragment_to_second_fragment)
+                val action = MainFragmentDirections.actionMainFragmentToFirstFragment(input)
+                Navigation.findNavController(binding.root).navigate(action)
+//                navController.navigate(R.id.action_main_fragment_to_second_fragment)
             }
             else {
 

@@ -8,14 +8,17 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.this_android_app.R
 import com.example.this_android_app.databinding.FragmentOneTwoBinding
+import com.example.this_android_app.fragtwo.FragmentTwoArgs
 
 private const val ARG_PARAM1 = "param1"
 
 class FragmentOne : Fragment() {
 
     private lateinit var viewModel: OneViewModel
+    private val args: FragmentOneArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +27,9 @@ class FragmentOne : Fragment() {
         val binding: FragmentOneTwoBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_one_two, container, false)
         viewModel = ViewModelProvider(this).get( OneViewModel::class.java)
         binding.oneViewModel = viewModel
+
+        val data = args.stringOneData
+        binding.passedData.text = data
 
         viewModel.navigateTo.observe(viewLifecycleOwner) {
             val navController = binding.root.findNavController()
