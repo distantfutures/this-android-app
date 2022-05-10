@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.this_android_app.R
@@ -30,11 +31,18 @@ class FragmentOne : Fragment() {
 
         val data = args.stringOneData
         binding.passedData.text = data
+        binding.navigateButton.text = "Fragment 2"
+        binding.navigateButton.setOnClickListener {
+            viewModel.toNextFragment()
+        }
 
         viewModel.navigateTo.observe(viewLifecycleOwner) {
-            val navController = binding.root.findNavController()
+            val input = binding.fragmentInput.text.toString()
+//            val navController = binding.root.findNavController()
             if(it == true) {
-                navController.navigate(R.id.action_first_fragment_to_second_fragment)
+                val action = FragmentOneDirections.actionFirstFragmentToSecondFragment(input)
+                Navigation.findNavController(binding.root).navigate(action)
+//                navController.navigate(R.id.action_first_fragment_to_second_fragment)
             }
         }
         return binding.root

@@ -7,8 +7,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="passed_data">Passed Data</string>
-    <string name="send_data">Send data to %s</string>
-    <string name="navigate_to">Navigate to %s</string>
+    <string name="send_data">Send data</string>
+    <string name="navigate_to">Fragment</string>
     <string name="settings">Settings</string>
     <string name="about">About</string>
     <string name="open">Open</string>
