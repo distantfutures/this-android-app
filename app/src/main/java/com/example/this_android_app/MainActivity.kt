@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
                     toolbar.setDisplayShowTitleEnabled(true)
                 }
             }
-
         }
 //        actionBarToggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
 //        binding.drawerLayout.addDrawerListener(actionBarToggle)
