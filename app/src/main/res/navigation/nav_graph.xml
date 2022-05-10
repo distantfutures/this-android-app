@@ -7,7 +7,7 @@
     app:startDestination="@id/main_fragment">
     <fragment
         android:id="@+id/first_fragment"
-        android:name="com.example.this_android_app.FragmentOneTwo"
+        android:name="com.example.this_android_app.fragone.FragmentOne"
         android:label="Fragment 1"
         tools:layout="@layout/fragment_one_two">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/second_fragment"
-        android:name="com.example.this_android_app.FragmentOneTwo"
+        android:name="com.example.this_android_app.fragtwo.FragmentTwo"
         android:label="Fragment 2"
         tools:layout="@layout/fragment_one_two">
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/main_fragment"
-        android:name="com.example.this_android_app.MainFragment"
+        android:name="com.example.this_android_app.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action

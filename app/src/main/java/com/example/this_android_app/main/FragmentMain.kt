@@ -1,4 +1,4 @@
-package com.example.this_android_app
+package com.example.this_android_app.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import com.example.this_android_app.R
 import com.example.this_android_app.databinding.FragmentMainBinding
 
 private const val ARG_PARAM1 = "param1"
@@ -25,7 +25,8 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentMainBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
+        val binding: FragmentMainBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_main, container, false)
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         binding.mainViewModel = viewModel

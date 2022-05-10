@@ -6,13 +6,13 @@
     <data>
         <variable
             name="mainViewModel"
-            type="com.example.this_android_app.MainViewModel" />
+            type="com.example.this_android_app.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainFragment">
+        tools:context=".main.MainFragment">
 
         <Button
             android:id="@+id/fragment_one_button"
