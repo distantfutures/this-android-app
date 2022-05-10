@@ -31,6 +31,8 @@ class FragmentOne : Fragment() {
 
         val data = args.stringOneData
         binding.passedData.text = data
+        // Passes input data in a circle
+        binding.fragmentInput.setText(data)
         binding.navigateButton.text = "Fragment 2"
         binding.navigateButton.setOnClickListener {
             viewModel.toNextFragment()
