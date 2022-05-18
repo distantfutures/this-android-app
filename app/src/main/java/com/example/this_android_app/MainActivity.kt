@@ -1,24 +1,17 @@
 package com.example.this_android_app
 
-import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.system.Os.close
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.this_android_app.databinding.ActivityMainBinding
 import com.example.this_android_app.secondact.SecondActivity
-import kotlinx.coroutines.NonCancellable.start
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-    fun startSecondActivity() {
+    private fun startSecondActivity() {
         val secondAct = Intent(this, SecondActivity::class.java)
         this.startActivity(secondAct)
         Toast.makeText(applicationContext,

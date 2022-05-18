@@ -10,8 +10,10 @@ class TwoViewModel: ViewModel() {
 
     fun toNextFragment() {
         _navigateTo.value = true
-        doneNavigating()
+        // Should be removed for testing
+//        doneNavigating()
     }
+
     fun doneNavigating() {
         _navigateTo.value = false
     }
