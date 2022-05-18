@@ -11,7 +11,6 @@ class MainViewModel: ViewModel() {
 
     fun toNextFragment(fragNumber: Int) {
         _navigateToFrag.value = fragNumber
-        doneNavigating()
     }
     fun doneNavigating() {
         _navigateToFrag.value = null

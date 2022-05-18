@@ -10,7 +10,6 @@ class OneViewModel: ViewModel() {
 
     fun toNextFragment() {
         _navigateTo.value = true
-        doneNavigating()
     }
     fun doneNavigating() {
         _navigateTo.value = false

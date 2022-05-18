@@ -45,6 +45,7 @@ class FragmentOne : Fragment() {
             if(it == true) {
                 val action = FragmentOneDirections.actionFirstFragmentToSecondFragment(input)
                 Navigation.findNavController(binding.root).navigate(action)
+                viewModel.doneNavigating()
 //                navController.navigate(R.id.action_first_fragment_to_second_fragment)
             }
         }

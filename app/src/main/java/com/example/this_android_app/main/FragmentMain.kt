@@ -38,11 +38,13 @@ class MainFragment : Fragment() {
             if(it == 1) {
                 val action = MainFragmentDirections.actionMainFragmentToFirstFragment(input)
                 Navigation.findNavController(binding.root).navigate(action)
+                viewModel.doneNavigating()
 //                navController.navigate(R.id.action_mainFragment_to_first_fragment)
             }
             if(it == 2) {
                 val action = MainFragmentDirections.actionMainFragmentToFirstFragment(input)
                 Navigation.findNavController(binding.root).navigate(action)
+                viewModel.doneNavigating()
 //                navController.navigate(R.id.action_main_fragment_to_second_fragment)
             }
             else {
