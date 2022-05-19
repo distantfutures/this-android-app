@@ -2,6 +2,7 @@ package com.example.this_android_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -11,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.this_android_app.databinding.ActivityMainBinding
+import com.example.this_android_app.main.MainFragment
 import com.example.this_android_app.secondact.SecondActivity
 
 class MainActivity : AppCompatActivity() {
@@ -43,7 +45,21 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        setArgs()
     }
+
+    fun setArgs() {
+        val fragTransaction = supportFragmentManager.beginTransaction()
+        val bundle = Bundle()
+        bundle.putString("message", "From Activity 1")
+        bundle.putString("message2", "From Activity 1 Also")
+        val mainFrag = MainFragment()
+        mainFrag.arguments = bundle
+        fragTransaction.add(R.id.nav_host_fragment, mainFrag).commit()
+        Log.i("BundleCheck", "$bundle")
+//        fragTransaction.replace(mainFrag).commit()
+    }
+
     private fun startSecondActivity() {
         val secondAct = Intent(this, SecondActivity::class.java)
         this.startActivity(secondAct)

@@ -1,6 +1,7 @@
 package com.example.this_android_app.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,6 +52,9 @@ class MainFragment : Fragment() {
 
             }
         }
+        val args = arguments?.getString("message2")
+        binding.activityData.text = args
+        Log.i("BundleCheck", "$args")
         return binding.root
     }
 }
