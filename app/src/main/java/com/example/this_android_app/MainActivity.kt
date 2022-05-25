@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         bundle.putString("message2", "From Activity 1 Also")
         val mainFrag = MainFragment()
         mainFrag.arguments = bundle
-        fragTransaction.add(R.id.nav_host_fragment, mainFrag).commit()
+//        fragTransaction.add(R.id.nav_host_fragment, mainFrag).commit()
         Log.i("BundleCheck", "$bundle")
 //        fragTransaction.replace(mainFrag).commit()
     }
