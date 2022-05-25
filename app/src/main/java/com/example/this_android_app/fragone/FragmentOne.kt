@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -44,6 +45,7 @@ class FragmentOne : Fragment() {
             if(it == true) {
                 val action = FragmentOneDirections.actionFirstFragmentToSecondFragment(input)
                 Navigation.findNavController(binding.root).navigate(action)
+                viewModel.doneNavigating()
 //                navController.navigate(R.id.action_first_fragment_to_second_fragment)
             }
         }

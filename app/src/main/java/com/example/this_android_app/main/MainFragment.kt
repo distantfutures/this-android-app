@@ -1,6 +1,7 @@
 package com.example.this_android_app.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,17 +39,22 @@ class MainFragment : Fragment() {
             if(it == 1) {
                 val action = MainFragmentDirections.actionMainFragmentToFirstFragment(input)
                 Navigation.findNavController(binding.root).navigate(action)
+                viewModel.doneNavigating()
 //                navController.navigate(R.id.action_mainFragment_to_first_fragment)
             }
             if(it == 2) {
                 val action = MainFragmentDirections.actionMainFragmentToFirstFragment(input)
                 Navigation.findNavController(binding.root).navigate(action)
+                viewModel.doneNavigating()
 //                navController.navigate(R.id.action_main_fragment_to_second_fragment)
             }
             else {
 
             }
         }
+        val args = arguments?.getString("message2")
+        binding.activityData.text = args
+        Log.i("BundleCheck", "$args")
         return binding.root
     }
 }
